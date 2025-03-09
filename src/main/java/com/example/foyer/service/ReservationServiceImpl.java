@@ -4,6 +4,8 @@ import com.example.foyer.model.Reservation;
 import com.example.foyer.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -35,5 +37,9 @@ public class ReservationServiceImpl implements IReservationService {
     @Override
     public void deleteReservation(String id) {
         reservationRepository.deleteById(id);
+    }
+
+    public List<Reservation> getReservationParAnneeUniversitaireEtNomUniversite(Date anneeUniversitaire, String nomUniversite) {
+        return reservationRepository.findByAnneeUniversitaireAndUniversite(anneeUniversitaire, nomUniversite);
     }
 }

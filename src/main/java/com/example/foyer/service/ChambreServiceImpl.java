@@ -1,6 +1,7 @@
 package com.example.foyer.service;
 
 import com.example.foyer.model.Chambre;
+import com.example.foyer.model.TypeChambre;
 import com.example.foyer.repository.ChambreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,5 +36,17 @@ public class ChambreServiceImpl implements IChambreService {
     @Override
     public void deleteChambre(Long id) {
         chambreRepository.deleteById(id);
+    }
+
+
+    public List<Chambre> getChambresNonReserveParNomUniversiteEtTypeChambre(String nomUniversite, TypeChambre type) {
+        return chambreRepository.findNonReservedChambresByUniversiteAndType(nomUniversite, type);
+    }
+    public List<Chambre> getChambresParBlocEtType(long idBloc, TypeChambre typeC) {
+        return chambreRepository.findByBloc_IdBlocAndTypeC(idBloc, typeC);
+    }
+
+    public List<Chambre> getChambresParBlocEtTypeJPQL(long idBloc, TypeChambre typeC) {
+        return chambreRepository.findByBlocAndTypeJPQL(idBloc, typeC);
     }
 }
