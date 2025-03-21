@@ -27,4 +27,7 @@ public class Reservation {
     @ManyToOne
     @JoinColumn(name = "idChambre")
     private Chambre chambre;
+
+    public void setNumReservation(String s) {
+    }
 }

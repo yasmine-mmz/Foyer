@@ -20,4 +20,7 @@ public class Universite {
 
     @OneToMany(mappedBy = "universite", cascade = CascadeType.ALL)
     private List<Foyer> foyers;
+
+    public void setFoyer(Foyer foyer) {
+    }
 }

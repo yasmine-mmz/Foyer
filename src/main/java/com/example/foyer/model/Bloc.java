@@ -24,4 +24,8 @@ public class Bloc {
 
     @OneToMany(mappedBy = "bloc", cascade = CascadeType.ALL)
     private List<Chambre> chambres;
+
+    public Object getNom() {
+        return nomBloc;
+    }
 }

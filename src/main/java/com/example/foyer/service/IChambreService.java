@@ -9,4 +9,5 @@ public interface IChambreService {
     Chambre addChambre(Chambre chambre);
     Chambre updateChambre(Chambre chambre);
     void deleteChambre(Long id);
+
 }

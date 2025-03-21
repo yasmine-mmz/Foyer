@@ -8,4 +8,6 @@ public interface FoyerService {
     public Foyer addFoyer(Foyer foyer);
     public Optional<Foyer> findFoyerById(Long id);
     public void deleteFoyer(Long id);
+    public Foyer ajouterFoyerEtAffecterAUniversite (Foyer foyer, long idUniversite);
+
 }
